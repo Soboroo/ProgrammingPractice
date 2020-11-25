@@ -1,0 +1,7 @@
+{
+    "discord.enabled": true,
+    "workbench.editor.enablePreview": false,
+    "files.associations": {
+        "cstdio": "cpp"
+    },
+}
