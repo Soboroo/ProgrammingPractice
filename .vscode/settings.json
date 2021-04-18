@@ -50,6 +50,7 @@
 	"workbench.editor.enablePreview": false,
 	"files.associations": {
 		"cstdio": "cpp",
-		"ostream": "cpp"
+		"ostream": "cpp",
+		"type_traits": "c"
 	}
 }

@@ -22,6 +22,6 @@ char *solution(const char *s)
 
 int main()
 {
-	printf("%s", solution("bcdefgZ"));
+	printf("%s", solution("RLEPWEMAANTORTANEP"));
 	return 0;
 }
