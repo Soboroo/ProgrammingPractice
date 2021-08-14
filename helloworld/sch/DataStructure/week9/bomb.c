@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+typedef struct node
+{
+	int bomb;
+	struct node *link;
+} Node;
+
+Node *CL = NULL;
+
+void print_list()
+{
+	Node *p;
+
+	p = CL;
+	printf("( ");
+
+	if (CL)
+	{
+		do
+		{
+			printf("%d ", p->bomb);
+			p = p->link;
+		} while (p != CL);
+	}
+
+	printf(")\n\n");
+}
+
+int main()
+{
+	Node *new, *p, *mid;
+	new = (Node *)malloc(sizeof(Node));
+	srand(time(NULL));
+	new->bomb = rand() % 2;
+	new->link = NULL;
+	CL = new;
+
+	new = (Node *)malloc(sizeof(Node));
+	new->bomb = rand() % 2;
+	new->link = NULL;
+	p = CL;
+	p->link = new;
+
+	new = (Node *)malloc(sizeof(Node));
+	new->bomb = rand() % 2;
+	new->link = NULL;
+	p = p->link;
+	p->link = new;
+	new->link = CL;
+
+	print_list();
+}

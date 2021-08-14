@@ -1,0 +1,1 @@
+main(a, b, c) { printf("%d %d", c / b, c % b, scanf("%d%d%d", &a, &b, &c)); }

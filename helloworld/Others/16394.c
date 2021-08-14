@@ -1,0 +1,1 @@
+main(a) { printf("%d", a - 1946, scanf("%d", &a)); }

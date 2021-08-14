@@ -9,9 +9,9 @@
 	//"editor.lineNumbers": "off",
 	"editor.renderIndentGuides": false,
 	"editor.renderWhitespace": "none",
-	"breadcrumbs.enabled": false,
+	"breadcrumbs.enabled": true,
 	"editor.renderControlCharacters": false,
-	"editor.minimap.enabled": false,
+	"editor.minimap.enabled": true,
 	// Mouse related settings
 	"editor.smoothScrolling": true,
 	"editor.mouseWheelScrollSensitivity": 2,
@@ -51,6 +51,10 @@
 	"files.associations": {
 		"cstdio": "cpp",
 		"ostream": "cpp",
-		"type_traits": "c"
+		"type_traits": "c",
+		"cstdlib": "cpp",
+		"algorithm": "cpp",
+		"cmath": "c",
+		"*.tcc": "c"
 	}
 }

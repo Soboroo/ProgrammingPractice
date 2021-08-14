@@ -1,0 +1,1 @@
+main(a) { printf("%d", (int)ceil(a / 5.0), scanf("%d", &a)); }

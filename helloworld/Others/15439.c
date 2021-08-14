@@ -1,0 +1,1 @@
+main(a) { printf("%d", a * a - a, scanf("%d", &a)); }

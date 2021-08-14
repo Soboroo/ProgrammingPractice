@@ -1,0 +1,1 @@
+main(a, b) { printf("%d", b * (b + a % 2), b = (a / 2) + 1, scanf("%d", &a)); }

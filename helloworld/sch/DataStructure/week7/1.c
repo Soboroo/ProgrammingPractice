@@ -1,29 +1,27 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-typedef int element;
-typedef struct
-{
-	element data;
-	struct ListNode *link;
-} ListNode;
+typedef struct node {
+  char a;
+  struct node *llink;
+  struct node *rlink;
+} Node;
 
-int main()
-{
-	ListNode *head = NULL;
-	ListNode *p;
+int main() {
+  Node *head, *p;
+  Node a = {'I', NULL, NULL};
+  Node b = {'o', NULL, NULL};
+  Node c = {'T', NULL, NULL};
+  a.rlink = &b;
 
-	head = (ListNode *)malloc(sizeof(ListNode));
-	head->data = 10;
-	head->link = NULL;
+  b.llink = &a;
+  b.rlink = &c;
 
-	p = (ListNode *)malloc(sizeof(ListNode));
-	p->data = 20;
-	p->link = NULL;
+  c.llink = &b;
 
-	head->link = p;
-
-	p = (ListNode *)malloc(sizeof(ListNode));
-	p->data = 30;
-	p->link = NULL;
+  head = &a;
+  for (p = head->rlink; p->rlink != NULL; p = p->rlink)
+    ;
+  for (; p; p = p->llink) {
+    printf("%c", p->a);
+  }
 }
