@@ -55,6 +55,12 @@
 		"cstdlib": "cpp",
 		"algorithm": "cpp",
 		"cmath": "c",
-		"*.tcc": "c"
+		"*.tcc": "c",
+		"iostream": "cpp",
+		"istream": "cpp",
+		"ios": "cpp",
+		"iosfwd": "cpp",
+		"streambuf": "cpp",
+		"cwchar": "cpp"
 	}
 }
