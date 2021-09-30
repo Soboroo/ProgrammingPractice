@@ -61,6 +61,7 @@
 		"ios": "cpp",
 		"iosfwd": "cpp",
 		"streambuf": "cpp",
-		"cwchar": "cpp"
+		"cwchar": "cpp",
+		"list": "cpp"
 	}
 }
