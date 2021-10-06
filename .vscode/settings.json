@@ -1,7 +1,6 @@
 {
 	// Code settings
-	"editor.fontFamily": "SF Mono",
-	"editor.fontSize": 15,
+	"editor.fontFamily": "SF Mono, AppleSDGothicNeoM00",
 	"editor.fontWeight": "500",
 	"editor.fontLigatures": true,
 	"editor.lineHeight": 35,
@@ -32,7 +31,7 @@
 	"workbench.statusBar.visible": true,
 	"workbench.activityBar.visible": true,
 	// Terminal
-	"terminal.integrated.fontFamily": "SF Mono",
+	"terminal.integrated.fontFamily": "SF Mono, AppleSDGothicNeoM00",
 	"terminal.integrated.cursorStyle": "block",
 	"terminal.integrated.cursorBlinking": true,
 	"terminal.integrated.fontWeight": "500",
@@ -62,6 +61,9 @@
 		"iosfwd": "cpp",
 		"streambuf": "cpp",
 		"cwchar": "cpp",
-		"list": "cpp"
+		"list": "cpp",
+		"functional": "c",
+		"random": "c",
+		"string": "cpp"
 	}
 }

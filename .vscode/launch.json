@@ -13,7 +13,9 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\.exe\\${fileBasenameNoExtension}.exe",
-            "args": [],
+            "args": [
+                "-x ${workspaceFolder}\\.vscode\\.gdbinit"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -28,6 +30,50 @@
                 }
             ],
             "preLaunchTask": "save and compile for C++"
+        },
+        {
+            "name": "gcc - build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\.exe\\${fileBasenameNoExtension}.exe",
+            "args": [
+                "-x ${workspaceFolder}\\.vscode\\.gdbinit"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "save and compile for C"
+        },
+        {
+            "name": "VSC++ - build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\.exe\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "vsdevcmd"
         }
     ]
 }

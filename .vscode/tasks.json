@@ -15,13 +15,25 @@
             ]
         },
         {
+            "label": "echo",
+            "command": "echo",
+            "args": [
+                "${workspaceFolder}"
+            ]
+        },
+        {
+            "label": "vsdevcmd",
+            "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\vsdevcmd\" && cl /Fe${fileDirname}\\.exe\\${fileBasenameNoExtension} ${file} && ${fileDirname}\\.exe\\${fileBasenameNoExtension}"
+        },
+        {
             "label": "save and compile for C++",
             "command": "g++",
             "args": [
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\.exe\\${fileBasenameNoExtension}"
+                "${fileDirname}\\.exe\\${fileBasenameNoExtension}",
+                "-std=c++11"
             ],
             "group": {
                 "kind": "build",
