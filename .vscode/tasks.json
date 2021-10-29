@@ -61,7 +61,7 @@
                 "${file}",
                 "-g",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}\\.exe\\${fileBasenameNoExtension}",
             ],
             "group": "build",
             "problemMatcher": {

@@ -37,24 +37,24 @@ int main() {
   ifstream fin("input.txt");
 
   int tc;
-  fin >> tc;
+  fin >> tc; // Test Case 수 입력
   for (int i = 0; i < tc; i++) {
     int len, sum = 0;
-    fin >> len;
+    fin >> len; //입력 길이
     vector<int> arr(len);
-    cout << "len = " << len << ": ";
+    // cout << "len = " << len << ": ";
     for (int i = 0; i < len; i++)
       fin >> arr[i];
-    mergeSort(&arr, 0, len - 1);
+    mergeSort(&arr, 0, len - 1); //입력 받은 배열 Merge Sort
     // for_each(arr.begin(), arr.end(), [](int n) { cout << n << " "; });
-    for (int i = 0; i < len - len % 3; i++) {
+    for (int i = 0; i < len - len % 3; i++) { //규칙에 따라 적절히 더함
       if (i % 3 == 2)
         continue;
       else
         sum += arr[i];
     }
-    for (int i = len - len % 3; i < len; i++)
+    for (int i = len - len % 3; i < len; i++) //끝 나머지 더함
       sum += arr[i];
-    cout << sum << endl;
+    cout << sum << endl; //결과 출력
   }
 }

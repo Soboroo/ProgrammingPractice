@@ -64,6 +64,8 @@
 		"list": "cpp",
 		"functional": "c",
 		"random": "c",
-		"string": "cpp"
-	}
+		"string": "cpp",
+		"vector": "cpp"
+	},
+	"cmake.configureOnOpen": false
 }
