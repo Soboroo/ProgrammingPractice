@@ -48,6 +48,7 @@
 	"discord.enabled": true,
 	"workbench.editor.enablePreview": false,
 	"files.associations": {
+		"*.cpp": "cpp",
 		"cstdio": "cpp",
 		"ostream": "cpp",
 		"type_traits": "c",
@@ -65,7 +66,14 @@
 		"functional": "c",
 		"random": "c",
 		"string": "cpp",
-		"vector": "cpp"
+		"vector": "cpp",
+		"array": "cpp",
+		"deque": "cpp",
+		"unordered_map": "cpp",
+		"string_view": "cpp",
+		"initializer_list": "cpp",
+		"ranges": "cpp"
 	},
-	"cmake.configureOnOpen": false
+	"cmake.configureOnOpen": false,
+	"C_Cpp.intelliSenseEngine": "Tag Parser"
 }
