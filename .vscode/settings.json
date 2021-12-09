@@ -76,6 +76,5 @@
 		"optional": "cpp",
 		"numeric": "cpp"
 	},
-	"cmake.configureOnOpen": false,
-	"C_Cpp.intelliSenseEngine": "Tag Parser"
+	"cmake.configureOnOpen": false
 }

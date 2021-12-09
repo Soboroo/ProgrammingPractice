@@ -20,8 +20,6 @@ void AddEdge(int start, int end) {
 }
 
 int aDFS(int v) {
-  if (visited[v]) // DFS()에서 vertex 중복 작업 방지
-    return -1;
   bool isDefended = true;
   bool isInstalled = false;
   int result;
@@ -48,7 +46,7 @@ int aDFS(int v) {
 void DFS() {
   fill(visited.begin(), visited.end(), 0);
   for (int i = 1; i <= n; i++) {
-    if (aDFS(i) == NOT_DEFENDED)
+    if (!visited[i] && aDFS(i) == NOT_DEFENDED)
       numTuret++;
   }
 }
