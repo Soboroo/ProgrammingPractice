@@ -48,7 +48,6 @@
 	"discord.enabled": true,
 	"workbench.editor.enablePreview": false,
 	"files.associations": {
-		"*.cpp": "cpp",
 		"cstdio": "cpp",
 		"ostream": "cpp",
 		"type_traits": "c",
@@ -66,6 +65,9 @@
 		"functional": "c",
 		"random": "c",
 		"string": "cpp",
+		"unistd.h": "c",
+		"exception": "cpp",
+		"*.cpp": "cpp",
 		"vector": "cpp",
 		"array": "cpp",
 		"deque": "cpp",
@@ -74,7 +76,8 @@
 		"initializer_list": "cpp",
 		"ranges": "cpp",
 		"optional": "cpp",
-		"numeric": "cpp"
+		"numeric": "cpp",
+		"stack": "cpp"
 	},
 	"cmake.configureOnOpen": false
 }
