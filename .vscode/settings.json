@@ -43,7 +43,7 @@
 	"terminal.integrated.rendererType": "dom",
 	"files.autoSave": "onWindowChange",
 	"window.compositionAttribute": "acrylic",
-	"workbench.iconTheme": "vscode-seedling-icon-theme",
+	"workbench.iconTheme": "material-icon-theme",
 	"workbench.colorTheme": "Atom One Dark",
 	"discord.enabled": true,
 	"workbench.editor.enablePreview": false,
