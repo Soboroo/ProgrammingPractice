@@ -80,6 +80,35 @@
             }
         },
         {
+            "label": "save and compile for C++ (LLVM)",
+            "command": "clang++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\.exe\\${fileBasenameNoExtension}",
+                "-std=c++11"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
             "label": "execute",
             "command": "cmd",
             "group": "test",
