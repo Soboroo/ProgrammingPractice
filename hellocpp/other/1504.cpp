@@ -1,16 +1,16 @@
+#include <algorithm>
 #include <climits>
 #include <iostream>
 #include <queue>
 #include <vector>
 using namespace std;
 
-void dijkstra(vector<vector<pair<int, int>>> &graph, int start) {
+using dint = pair<int, int>;
+int dijkstra(const vector<vector<dint>> &graph, int start, int end) {
   vector<int> distance(graph.size(), INT_MAX);
   vector<bool> visited(graph.size(), false);
+  priority_queue<dint, vector<dint>, greater<dint>> pq;
   distance[start] = 0;
-  priority_queue<pair<int, int>, vector<pair<int, int>>,
-                 greater<pair<int, int>>>
-      pq;
   pq.push({0, start});
   while (!pq.empty()) {
     int u = pq.top().second;
@@ -27,24 +27,27 @@ void dijkstra(vector<vector<pair<int, int>>> &graph, int start) {
       }
     }
   }
-  for (int i = 1; i < distance.size(); i++) {
-    if (distance[i] == INT_MAX)
-      cout << "INF" << '\n';
-    else
-      cout << distance[i] << '\n';
-  }
+  return distance[end] == INT_MAX ? -1 : distance[end];
 }
-
 int main() {
   int n, m;
   cin >> n >> m;
-  int start;
-  cin >> start;
-  vector<vector<pair<int, int>>> graph(n + 1);
+  vector<vector<dint>> graph(n + 1);
+  int u, v, w;
   for (int i = 0; i < m; i++) {
-    int u, v, w;
     cin >> u >> v >> w;
     graph[u].push_back({v, w});
+    graph[v].push_back({u, w});
   }
-  dijkstra(graph, start);
+  int result[2];
+  int a, b;
+  cin >> a >> b;
+  for (int i = 0; i < 2; i++) {
+    int x = dijkstra(graph, 1, a);
+    int y = dijkstra(graph, a, b);
+    int z = dijkstra(graph, b, n);
+    result[i] = x == -1 || y == -1 || z == -1 ? -1 : x + y + z;
+    swap(a, b);
+  }
+  cout << (result[0] < result[1] ? result[0] : result[1]);
 }
