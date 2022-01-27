@@ -20,5 +20,8 @@ int main() {
   for (auto &p : m) {
     v.push_back(p);
   }
-  sort(v.begin(), v.end(), [](pa &p1, pa &p2) {});
+  sort(v.begin(), v.end(), [](pa &p1, pa &p2) {
+    return p1.second == p2.second ? p1.first < p2.first : p1.second > p2.second;
+  });
+  cout << v[0].first;
 }
