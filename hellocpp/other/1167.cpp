@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-#define INF 1000000000
+#define INF 1000000007
 
 #if 0
 int main() {
@@ -64,6 +64,7 @@ int main() {
 }
 #endif
 
+#if 0
 int dfs_impl(vector<vector<pair<int, int>>> &a, int node, vector<bool> &used) {
   int ret = 0;
   for (auto &p : a[node]) {
@@ -85,6 +86,24 @@ int dfs(vector<vector<pair<int, int>>> &a) {
   //   cout << d[i] << " ";
   return *max_element(++d.begin(), d.end());
 }
+#endif
+
+int max_dist = 0;
+int max_dist_node = 0;
+int dfs(vector<vector<pair<int, int>>> &a, int node, vector<bool> &used) {
+  int ret = 0;
+  for (auto &p : a[node]) {
+    if (used[p.first])
+      continue;
+    used[p.first] = true;
+    if (p.second > max_dist) {
+      max_dist = p.second;
+      max_dist_node = p.first;
+    }
+    ret = max(ret, dfs(a, p.first, used) + p.second);
+  }
+  return ret;
+}
 
 int main() {
   int n;
@@ -104,6 +123,5 @@ int main() {
         v = t;
     }
   }
-  int d = dfs(a);
-  cout << d;
+  vector<bool> used(n + 1, false);
 }
