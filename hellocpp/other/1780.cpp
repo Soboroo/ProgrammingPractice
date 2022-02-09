@@ -14,14 +14,18 @@ vector<int> foo(const vector<vector<int>> &mat, int n, int x, int y) {
       vector<int> tmp = foo(mat, n / 3, i, j);
       for (int k = 0; k < 3; k++) {
         ret[k] += tmp[k];
-        sum += tmp[k];
+        // sum += tmp[k];
       }
     }
-  if (sum == 9) {
-    for (int i = 0; i < 3; i++) {
-      if (ret[i] == 9)
-        ret[i] = 1;
-    }
+  // if (sum == 9) {
+  //   for (int i = 0; i < 3; i++) {
+  //     if (ret[i] == 9)
+  //       ret[i] = 1;
+  //   }
+  // }
+  for (int i = 0; i < 3; i++) {
+    if (ret[i] == 9)
+      ret[i] = 1;
   }
 
   return ret;
