@@ -1,121 +1,93 @@
 {
-    "version": "2.0.0",
-    "runner": "terminal",
-    "type": "shell",
-    "echoCommand": true,
-    "presentation": {
-        "reveal": "always"
+  "version": "2.0.0",
+  "runner": "terminal",
+  "type": "shell",
+  "echoCommand": true,
+  "presentation": {
+    "reveal": "always"
+  },
+  "tasks": [
+    {
+      "label": "make .exe folder",
+      "command": "mkdir",
+      "args": [".\\.exe"]
     },
-    "tasks": [
-        {
-            "label": "make .exe folder",
-            "command": "mkdir",
-            "args": [
-                ".\\.exe"
-            ]
-        },
-        {
-            "label": "echo",
-            "command": "echo",
-            "args": [
-                "${workspaceFolder}"
-            ]
-        },
-        {
-            "label": "vsdevcmd",
-            "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\vsdevcmd\" && cl /Fe${fileDirname}\\.exe\\${fileBasenameNoExtension} ${file} && ${fileDirname}\\.exe\\${fileBasenameNoExtension}"
-        },
-        {
-            "label": "save and compile for C++",
-            "command": "g++",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\.exe\\${fileBasenameNoExtension}",
-                "-std=c++11"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": {
-                "fileLocation": [
-                    "relative",
-                    "${workspaceRoot}"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            }
-        },
-        {
-            "label": "save and compile for C",
-            "command": "gcc",
-            "args": [
-                "${file}",
-                "-g",
-                "-o",
-                "${fileDirname}\\.exe\\${fileBasenameNoExtension}",
-            ],
-            "group": "build",
-            "problemMatcher": {
-                "fileLocation": [
-                    "relative",
-                    "${workspaceRoot}"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            }
-        },
-        {
-            "label": "save and compile for C++ (LLVM)",
-            "command": "clang++",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\.exe\\${fileBasenameNoExtension}",
-                "-std=c++11"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": {
-                "fileLocation": [
-                    "relative",
-                    "${workspaceRoot}"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            }
-        },
-        {
-            "label": "execute",
-            "command": "cmd",
-            "group": "test",
-            "args": [
-                "/C",
-                "${fileDirname}\\${fileBasenameNoExtension}"
-            ]
+    {
+      "label": "echo",
+      "command": "echo",
+      "args": ["${workspaceFolder}"]
+    },
+    {
+      "label": "vsdevcmd",
+      "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\vsdevcmd\" && cl /Fe${fileDirname}\\.exe\\${fileBasenameNoExtension} ${file} && ${fileDirname}\\.exe\\${fileBasenameNoExtension}"
+    },
+    {
+      "label": "save and compile for C++",
+      "command": "g++",
+      "args": ["-g", "${file}", "-o", "${fileDirname}\\.exe\\${fileBasenameNoExtension}", "-std=c++11"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
         }
-    ]
+      }
+    },
+    {
+      "label": "save and compile for C",
+      "command": "gcc",
+      "args": ["${file}", "-g", "-o", "${fileDirname}\\.exe\\${fileBasenameNoExtension}"],
+      "group": "build",
+      "problemMatcher": {
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
+    },
+    {
+      "label": "save and compile for C++ (LLVM)",
+      "command": "clang++",
+      "args": ["-g", "${file}", "-o", "${fileDirname}\\.exe\\${fileBasenameNoExtension}", "-std=c++11"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
+    },
+    {
+      "label": "execute",
+      "command": "cmd",
+      "group": "test",
+      "args": ["/C", "${fileDirname}\\${fileBasenameNoExtension}"]
+    },
+    {
+      "label": "compile swift",
+      "command": "swiftc",
+      "args": ["${file}", "-o", "${fileDirname}\\.exe\\${fileBasenameNoExtension}"]
+    }
+  ]
 }
