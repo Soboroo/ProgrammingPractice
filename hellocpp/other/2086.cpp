@@ -32,11 +32,7 @@ mat &fibo_mat(ll n) {
 
 int main() {
   ll n, m;
-  int sum = 0;
   cin >> n >> m;
-  for (ll i = n; i <= m; i++) {
-    mat &a = fibo_mat(i);
-    sum = (sum + a[0][1]) % MOD;
-  }
-  cout << sum << '\n';
+  int r = fibo_mat(m + 2)[0][1] - fibo_mat(n + 1)[0][1];
+  cout << (r < 0 ? r + MOD : r) << endl;
 }
