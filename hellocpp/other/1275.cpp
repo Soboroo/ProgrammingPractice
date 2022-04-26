@@ -56,9 +56,9 @@ int main() {
   init(a, tree, 1, 0, n - 1);
   for (int i = 0; i < m; i++) {
     ll x1, x2, y1, y2;
+    cin >> x1 >> x2 >> y1 >> y2;
     if (x1 > x2)
       swap(x1, x2);
-    cin >> x1 >> x2 >> y1 >> y2;
     cout << query(tree, 1, 0, n - 1, x1 - 1, x2 - 1) << '\n';
     update(a, tree, 1, 0, n - 1, y1 - 1, y2);
   }
