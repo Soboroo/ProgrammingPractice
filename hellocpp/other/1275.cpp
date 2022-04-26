@@ -16,12 +16,10 @@ void init(vector<ll> &a, vector<ll> &tree, int node, int start, int end) {
 }
 
 ll query(vector<ll> &tree, int node, int start, int end, int l, int r) {
-  if (l > end || r < start) {
+  if (l > end || r < start)
     return 0;
-  }
-  if (l <= start && end <= r) {
+  if (l <= start && end <= r)
     return tree[node];
-  }
   int mid = (start + end) / 2;
   return query(tree, node * 2, start, mid, l, r) +
          query(tree, node * 2 + 1, mid + 1, end, l, r);
@@ -29,18 +27,15 @@ ll query(vector<ll> &tree, int node, int start, int end, int l, int r) {
 
 void update(vector<ll> &a, vector<ll> &tree, int node, int start, int end,
             int index, ll value) {
-  if (index < start || index > end) {
+  if (index < start || index > end)
     return;
+  tree[node] = value;
+  if (start != end) {
+    int mid = (start + end) / 2;
+    update(a, tree, node * 2, start, mid, index, value);
+    update(a, tree, node * 2 + 1, mid + 1, end, index, value);
+    tree[node] = tree[node * 2] + tree[node * 2 + 1];
   }
-  if (start == end) {
-    tree[node] = value;
-    a[index] = value;
-    return;
-  }
-  int mid = (start + end) / 2;
-  update(a, tree, node * 2, start, mid, index, value);
-  update(a, tree, node * 2 + 1, mid + 1, end, index, value);
-  tree[node] = tree[node * 2] + tree[node * 2 + 1];
 }
 
 int main() {
