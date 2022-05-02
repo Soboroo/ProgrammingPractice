@@ -31,13 +31,12 @@ void update(vector<int> &a, vector<int> &tree, int node, int l, int r,
     return;
   if (l == r) {
     tree[node] = value;
-    a[index] = value;
     return;
   }
   int mid = (l + r) / 2;
   update(a, tree, node * 2, l, mid, index, value);
   update(a, tree, node * 2 + 1, mid + 1, r, index, value);
-  tree[node] = tree[node * 2] * tree[node * 2 + 1] % MOD;
+  tree[node] = (tree[node * 2] % MOD) * (tree[node * 2 + 1] % MOD) % MOD;
 }
 
 int main() {
