@@ -28,7 +28,7 @@
   "window.menuBarVisibility": "toggle",
   "workbench.statusBar.visible": true,
   // Terminal
-  "terminal.integrated.fontFamily": "SF Mono, AppleSDGothicNeoM00",
+  "terminal.integrated.fontFamily": "monospace",
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.fontWeight": "500",

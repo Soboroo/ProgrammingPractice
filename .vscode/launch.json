@@ -12,7 +12,7 @@
             "name": "g++ - build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\.exe\\${fileBasenameNoExtension}.exe",
+            "program": "${fileDirname}\\.exe\\${fileBasenameNoExtension}",
             "args": [
                 "-x ${workspaceFolder}\\.vscode\\.gdbinit"
             ],
@@ -21,7 +21,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "/usr/bin/gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -35,7 +35,7 @@
             "name": "gcc - build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\.exe\\${fileBasenameNoExtension}.exe",
+            "program": "${fileDirname}\\.exe\\${fileBasenameNoExtension}",
             "args": [
                 "-x ${workspaceFolder}\\.vscode\\.gdbinit"
             ],
@@ -44,7 +44,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "/usr/bin/gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -58,14 +58,14 @@
             "name": "VSC++ - build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\.exe\\${fileBasenameNoExtension}.exe",
+            "program": "${fileDirname}\\.exe\\${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",

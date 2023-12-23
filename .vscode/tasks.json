@@ -10,12 +10,16 @@
     {
       "label": "make .exe folder",
       "command": "mkdir",
-      "args": [".\\.exe"]
+      "args": [
+        ".\\.exe"
+      ]
     },
     {
       "label": "echo",
       "command": "echo",
-      "args": ["${workspaceFolder}"]
+      "args": [
+        "${workspaceFolder}"
+      ]
     },
     {
       "label": "vsdevcmd",
@@ -24,13 +28,22 @@
     {
       "label": "save and compile for C++",
       "command": "g++",
-      "args": ["-g", "${file}", "-o", "${fileDirname}\\.exe\\${fileBasenameNoExtension}", "-std=c++11"],
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/.exe/${fileBasenameNoExtension}",
+        "-std=c++11"
+      ],
       "group": {
         "kind": "build",
         "isDefault": true
       },
       "problemMatcher": {
-        "fileLocation": ["relative", "${workspaceRoot}"],
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
         "pattern": {
           "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
           "file": 1,
@@ -44,10 +57,18 @@
     {
       "label": "save and compile for C",
       "command": "gcc",
-      "args": ["${file}", "-g", "-o", "${fileDirname}\\.exe\\${fileBasenameNoExtension}"],
+      "args": [
+        "${file}",
+        "-g",
+        "-o",
+        "${fileDirname}/.exe/${fileBasenameNoExtension}"
+      ],
       "group": "build",
       "problemMatcher": {
-        "fileLocation": ["relative", "${workspaceRoot}"],
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
         "pattern": {
           "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
           "file": 1,
@@ -61,13 +82,22 @@
     {
       "label": "save and compile for C++ (LLVM)",
       "command": "clang++",
-      "args": ["-g", "${file}", "-o", "${fileDirname}\\.exe\\${fileBasenameNoExtension}", "-std=c++11"],
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/.exe/${fileBasenameNoExtension}",
+        "-std=c++11"
+      ],
       "group": {
         "kind": "build",
         "isDefault": true
       },
       "problemMatcher": {
-        "fileLocation": ["relative", "${workspaceRoot}"],
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
         "pattern": {
           "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
           "file": 1,
@@ -82,12 +112,19 @@
       "label": "execute",
       "command": "cmd",
       "group": "test",
-      "args": ["/C", "${fileDirname}\\${fileBasenameNoExtension}"]
+      "args": [
+        "/C",
+        "${fileDirname}\\${fileBasenameNoExtension}"
+      ]
     },
     {
       "label": "compile swift",
       "command": "swiftc",
-      "args": ["${file}", "-o", "${fileDirname}\\.exe\\${fileBasenameNoExtension}"]
+      "args": [
+        "${file}",
+        "-o",
+        "${fileDirname}\\.exe\\${fileBasenameNoExtension}"
+      ]
     }
   ]
 }
