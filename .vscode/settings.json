@@ -15,7 +15,7 @@
   "editor.scrollBeyondLastLine": true,
   "editor.cursorStyle": "block",
   "editor.cursorBlinking": "phase",
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorWidth": 2,
   // Explorer settings
   "explorer.openEditors.visible": 0,
@@ -27,7 +27,6 @@
   "window.zoomLevel": 0,
   "window.menuBarVisibility": "toggle",
   "workbench.statusBar.visible": true,
-  "workbench.activityBar.visible": true,
   // Terminal
   "terminal.integrated.fontFamily": "SF Mono, AppleSDGothicNeoM00",
   "terminal.integrated.cursorStyle": "block",
